@@ -44,7 +44,7 @@ const handler: Handler = async (event, context) => {
       };
     }
 
-    return { statusCode: 200, body: calculateCRC(payload) };
+    return { statusCode: 200, body: { crc: calculateCRC(payload) } };
   }
 
   return {
