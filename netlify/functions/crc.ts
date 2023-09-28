@@ -44,9 +44,12 @@ const handler: Handler = async (event, context) => {
       };
     }
 
+    const crc = calculateCRC(payload);
+    console.log({ payload, crc });
+
     return {
       statusCode: 200,
-      body: JSON.stringify({ crc: calculateCRC(payload) }),
+      body: JSON.stringify({ crc }),
     };
   }
 
